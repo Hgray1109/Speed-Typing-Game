@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: black;
+  color: #00b800;
+  margin: 0;
+  padding: 0;
+  font-family: "Press Start 2P", Impact, Haettenschweiler;
+  text-align: center;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.word-count{
+  margin-top: 3em;
+}
+
+
+button {
+  font-family: "Press Start 2p";
+  display: block;
+  margin: 25px auto;
+  border: .25em solid #00b800;
+  background: black;
+  padding: 1em 2.5em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #00b800;
+  text-shadow: 
+  0 0 .25em #00b800,
+  .0 0 .125em #fff;
+
+  box-shadow: 0 0 2em #00b800, inset 0 0 .7em #00b800;
+  position: relative;
+}
+
+button::before{
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: #00b800;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 110%;
+
+  transform: perspective(1em)
+  rotateX(40deg) scale(1, .35);
+  filter:blur(1.5em);
+  opacity: .85;
+}
+
+button:hover::before{ 
+  opacity: 1;
+}
+
+button:disabled,
+button:disabled:hover {
+  cursor: not-allowed;
+  background-color: #a5a2a2;
+  text-shadow: none;
+  box-shadow: none;
+  color: #00b800;
+  
+}
+
+button:hover,
+button:focus {
+  background: gold;
+  color: black;
+  box-shadow: 0 0 4em #00b800;
+ 
+}
+
+textarea {
+  font-family: "Press Start 2p";
+  border: 4px solid gold;
+  width: 90%;
+  height: 200px;
+  background: #00b800;
+  padding: 10px;
+  margin: 0 auto;
+  
+}
+
+textarea:focus {
+  outline-color: gold;
+}
+
+textarea:disabled {
+  background-color: #a5a2a2;
+  cursor: not-allowed;
+}
