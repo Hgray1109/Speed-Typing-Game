@@ -10,7 +10,11 @@ function App() {
     isTimeRunning,
     timeRemaining,
     startGame, 
-    wordCount 
+    wordCount,
+    displayScore,
+    highScore,
+    currentGame,
+    restartGame 
   } = useTypingGame() 
 
 
@@ -27,12 +31,20 @@ function App() {
       />
    
       <h4>Time Remaining: {timeRemaining}</h4>
-      <button onClick={startGame} 
+      <button className="start-btn" onClick={startGame} 
       disabled={isTimeRunning}
       >
-        Start Game
+        {!currentGame ? "Start Game" : "Play Again"}
       </button>
       <h1 className="word-count">Word Count: {wordCount}</h1>
+      {highScore.length > 0 &&
+        <>
+        <div className="high-score">
+            High Score: {displayScore} 
+        </div>
+        <button className="restart-btn" onClick={restartGame} > Restart </button>
+      </>
+      }
     </div>
   )
 }
